@@ -34,8 +34,7 @@ var getRepoIssues = function(repo) {
           displayWarning(repo);
         }
       });
-    }
-    else {
+    }else {
         // if not successful, redirect to homepage
         document.location.replace("./index.html");
     }
@@ -59,7 +58,6 @@ var displayIssues = function(issues) {
     // create span to hold issue title
     var titleEl = document.createElement("span");
     titleEl.textContent = issues[i].title;
-    
   
     // append to container
     issueEl.appendChild(titleEl);
@@ -70,8 +68,7 @@ var displayIssues = function(issues) {
     // check if issue is an actual issue or a pull request
     if (issues[i].pull_request) {
       typeEl.textContent = "(Pull request)";
-    }
-    else {
+    } else {
       typeEl.textContent = "(Issue)";
     }
 
@@ -97,4 +94,4 @@ var displayWarning = function(repo) {
   limitWarningEl.appendChild(linkEl);
 };
 
-getRepoIssues("facebook/react");
+getRepoName();
